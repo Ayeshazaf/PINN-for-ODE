@@ -1,6 +1,4 @@
-Here’s a clean **README + explanation** tailored to your level and project:
 
----
 
 # 📘 README — Physics-Informed Neural Network (PINN) for ODE
 
@@ -14,7 +12,7 @@ y'' + 16y = 0
 
 with initial conditions:
 [
-y(0) = 2, \quad y'(0) = -2
+y(0) = 2,  y'(0) = -2
 ]
 
 Instead of using traditional numerical solvers, the model learns the solution by embedding the **physics (differential equation)** directly into the loss function.
@@ -25,7 +23,7 @@ Instead of using traditional numerical solvers, the model learns the solution by
 
 A fully connected neural network:
 
-* Input: ( x \in \mathbb{R} )
+* Input: ( x (Real Number) )
 * Output: ( y(x) )
 * Layers:
 
@@ -45,12 +43,12 @@ The network is trained using two constraints:
 Ensures the model satisfies the differential equation:
 
 [
-\text{Residual} = y'' + 16y
+Residual = y'' + 16y
 ]
 
 Loss:
 [
-\mathcal{L}_{physics} = \text{MSE}(y'' + 16y)
+{L}_{physics} = MSE(y'' + 16y)
 ]
 
 ---
@@ -64,7 +62,7 @@ Forces the model to satisfy:
 
 Loss:
 [
-\mathcal{L}_{IC} = (y(0) - 2)^2 + (y'(0) + 2)^2
+{L}_{IC} = (y(0) - 2)^2 + (y'(0) + 2)^2
 ]
 
 ---
@@ -72,7 +70,7 @@ Loss:
 ### 3. Total Loss
 
 [
-\mathcal{L} = \mathcal{L}*{physics} + \mathcal{L}*{IC}
+{L} = {L}*{physics} + {L}*{IC}
 ]
 
 ---
@@ -96,7 +94,7 @@ The script generates:
 
 Exact solution:
 [
-y(x) = 2\cos(4x) - 0.5\sin(4x)
+y(x) = 2cos(4x) - 0.5sin(4x)
 ]
 
 ---
